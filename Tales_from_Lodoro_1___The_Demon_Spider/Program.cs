@@ -126,17 +126,16 @@ namespace Tales_from_Lodoro_1___The_Demon_Spider
                 Console.ForegroundColor = ConsoleColor.DarkMagenta;
                 TextPrint("'Thank goodness. I have been looking everywhere for you.");
                 TextPrint("Let me catch my breath.'");
-                Thread.Sleep(700);
-                Console.Clear();
+                Thread.Sleep(700);                
                 Console.ForegroundColor = ConsoleColor.Gray;
                 TextPrint("After a moment he regains his composure.");
-                Thread.Sleep(100);
+                Thread.Sleep(900);
                 Console.Clear();
                 Console.ForegroundColor = ConsoleColor.DarkMagenta;
                 TextPrint("'I have been sent by the Earl of Neilhaem to retrieve you.'");
                 TextPrint("'He needs you to solve a problem for him.");
                 TextPrint("Gather your things and meet me at the edge of town.'");
-                Thread.Sleep(400);
+                Thread.Sleep(800);
                 Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Gray;
                 TextPrint("He nods his head quickly to you as he stands back up.");
@@ -221,7 +220,20 @@ namespace Tales_from_Lodoro_1___The_Demon_Spider
                             if (response == "comply" || response == "agree")
                             {
                                 Console.ForegroundColor = ConsoleColor.Blue;
-                                TextPrint("''");
+                                TextPrint("'Alright, I'm coming out now. You better keep your word.'");
+                                Console.ForegroundColor = ConsoleColor.Gray;
+                                TextPrint("The dwarf places his axe back on his belt and steps back into the light.");
+                                Console.ForegroundColor = ConsoleColor.White;
+                                TextPrint("'Out ye come then. Nice and slow. We're just gonna talk, a'right?'");
+                                Console.ForegroundColor = ConsoleColor.Gray;
+                                TextPrint("You step out into the doorway and face the dwarf.");
+                                Console.ForegroundColor = ConsoleColor.White;
+                                TextPrint("'I thought ye'd be taller. And, well, not a human.'");
+                                Console.ForegroundColor = ConsoleColor.Blue;
+                                TextPrint("'You shouldn't assume so much when you know so little.'");
+                                TextPrint("'Like whether or not I have something.'");
+                                Console.ForegroundColor = ConsoleColor.Gray;
+                                TextPrint("The dwarf drops his gaze to the floor, and starts shifting his feet.");
                             }
                         }
                         if (tactic == "surprise" || tactic == "scare" || tactic == "spook")
@@ -290,6 +302,11 @@ namespace Tales_from_Lodoro_1___The_Demon_Spider
                                     Console.Clear();
                                 }
                             }
+                            if (decide == "kill")
+                            {
+                                TextPrint("The dwarf draws a handaxe and readies himself for combat.");
+                                Console.ForegroundColor = ConsoleColor.Red;
+                            }
                         }
                     }
                     if (plan == "inform")
@@ -298,24 +315,24 @@ namespace Tales_from_Lodoro_1___The_Demon_Spider
                         TextPrint("when three large and very burly men step into your way.");
                         Console.WriteLine();
                         Console.WriteLine();
-                        Thread.Sleep(200);
-                        Console.Clear();
+                        Thread.Sleep(500);
                         TextPrint("The one directly in front of you steps closer to you.");
                         Console.ForegroundColor = ConsoleColor.DarkRed;
                         TextPrint("'Where do ye think yer goin?'");
                         Thread.Sleep(200);
-                        Console.Clear();
                         Console.ForegroundColor = ConsoleColor.Gray;
                         TextPrint("The three men close in on you, and you have no escape route.");
                         TextPrint("The last thing you see is several vicious-looking knives speeding into your gut and face.");
-                        Thread.Sleep(200);
+                        Thread.Sleep(1000);
                         Console.Clear();
                         TextPrint("You have been killed by the minions of evil.");
-                        TextPrint("Your adventure. . .");
+                        Thread.Sleep(800);
+                        TextPrint("YOUR ADVENTURE . . .");
                         Console.WriteLine();
+                        Thread.Sleep(500);
                         Console.WriteLine();
-                        Thread.Sleep(200);
-                        TextPrint("IS OVER.");
+                        Thread.Sleep(500);
+                        TextPrint(". . . IS OVER.");
                     }
                 }
                 if (pick == "ignore")
@@ -325,7 +342,12 @@ namespace Tales_from_Lodoro_1___The_Demon_Spider
                     Thread.Sleep(370);
                     TextPrint("You have ignored the issue and the world is doomed!");
                     Thread.Sleep(300);
-                    TextPrint("THE ADVENTURE...HAS ENDED.");
+                    TextPrint("THE ADVENTURE . . .");
+                    Console.WriteLine();
+                    Thread.Sleep(500);
+                    Console.WriteLine();
+                    Thread.Sleep(500);
+                    TextPrint(". . . HAS ENDED.");
                 }
             }
             if (respond == "deny")
@@ -338,7 +360,12 @@ namespace Tales_from_Lodoro_1___The_Demon_Spider
                 Thread.Sleep(370);
                 TextPrint("You have avoided the issue and the world is doomed!");
                 Thread.Sleep(300);
-                TextPrint("THE ADVENTURE...IS OVER.");
+                TextPrint("THE ADVENTURE . . .");
+                Console.WriteLine();
+                Thread.Sleep(500);
+                Console.WriteLine();
+                Thread.Sleep(500);
+                TextPrint(". . . IS OVER.");
             }
         }
         static void HeroMelee(string CQC)
