@@ -283,6 +283,17 @@ namespace Tales_from_Lodoro_1___The_Demon_Spider
                                     TextPrint("You watch his corpse thud into the garbage below.");
                                     TextPrint("Do you read the letter?");
                                     var read = Console.ReadLine();
+                                    read = read.ToLower();
+                                    Console.Clear();
+
+                                    if (read == "yes")
+                                    {
+                                        Thread.Sleep(200);
+                                        TextPrint("The letter is a plain sheet of yellowed paper.");
+                                        TextPrint("The wax seal has been cleanly removed, and it is clearly wrinkled.");
+                                        TextPrint("Opening the letter, you see that the handwriting is very complex and difficult to read.");
+
+                                    }
                                 }
                             }
                         }
