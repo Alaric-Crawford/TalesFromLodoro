@@ -97,6 +97,15 @@ namespace Tales_from_Lodoro_1___The_Demon_Spider
         {
             int health = 10;
             int fightingStrength = 10;
+            int lockpicks = 10;
+            int throwingKnives = 20;
+            var inventory = new List<string>();
+            inventory.Add("short sword");
+            inventory.Add("multi-colored cloths");
+            inventory.Add("caltrops");
+            inventory.Add("straight dagger");
+            inventory.Add("curved dagger");
+
             TextPrint("What is thine name?");
             var name = Console.ReadLine();
             Console.Clear();
@@ -111,7 +120,7 @@ namespace Tales_from_Lodoro_1___The_Demon_Spider
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.DarkMagenta;
             TextPrint("*huff huff huff* 'You are " + name + ", yes?'");
-            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.ResetColor();
             Thread.Sleep(350);
             TextPrint("How do you respond: confirm or deny?");
             Console.WriteLine("Please enter CONFIRM or DENY, nothing else");
@@ -126,8 +135,8 @@ namespace Tales_from_Lodoro_1___The_Demon_Spider
                 Console.ForegroundColor = ConsoleColor.DarkMagenta;
                 TextPrint("'Thank goodness. I have been looking everywhere for you.");
                 TextPrint("Let me catch my breath.'");
-                Thread.Sleep(700);                
-                Console.ForegroundColor = ConsoleColor.Gray;
+                Thread.Sleep(700);
+                Console.ResetColor();
                 TextPrint("After a moment he regains his composure.");
                 Thread.Sleep(900);
                 Console.Clear();
@@ -137,7 +146,7 @@ namespace Tales_from_Lodoro_1___The_Demon_Spider
                 TextPrint("Gather your things and meet me at the edge of town.'");
                 Thread.Sleep(800);
                 Console.Clear();
-                Console.ForegroundColor = ConsoleColor.Gray;
+                Console.ResetColor();
                 TextPrint("He nods his head quickly to you as he stands back up.");
                 TextPrint("Before you can say anything to him, he has disappeared from the inn.");
                 Console.WriteLine();
@@ -178,7 +187,7 @@ namespace Tales_from_Lodoro_1___The_Demon_Spider
                         Console.ForegroundColor = ConsoleColor.White;
                         TextPrint("'Argh, where's that damned ar'ifact?! I know 'e 'as it!'");
                         Thread.Sleep(100);
-                        Console.ForegroundColor = ConsoleColor.Gray;
+                        Console.ResetColor();
                         TextPrint("You peek inside to see a short and stocky man rummaging through your things.");
                         Thread.Sleep(80);
                         TextPrint("Do you try to SNEAK IN, or do you SURPRISE him by bursting in the door?");
@@ -195,7 +204,7 @@ namespace Tales_from_Lodoro_1___The_Demon_Spider
                             Thread.Sleep(100);
                             Console.ForegroundColor = ConsoleColor.White;
                             TextPrint("'Oi! 'U's there? Come out where I can see ye!'");
-                            Console.WriteLine(); Console.ForegroundColor = ConsoleColor.Gray;
+                            Console.ResetColor();
                             TextPrint("Do you STAY HIDDEN, COMPLY with him and show yourself, or RUSH him to try and knock out or kill him?");
                             var response = Console.ReadLine();
                             response = response.ToLower();
@@ -211,7 +220,7 @@ namespace Tales_from_Lodoro_1___The_Demon_Spider
                                 Console.ForegroundColor = ConsoleColor.White;
                                 TextPrint("'All righ', ye. How about this? I put me axe away, and the two of us talk this out like proper lads.'");
                                 TextPrint("'What do ye say te tha'?'");
-                                Console.ForegroundColor = ConsoleColor.Gray;
+                                Console.ResetColor();
                                 TextPrint("What do you do? try to KEEP HIDING or SHOW yourself?");
                                 var reResponse = Console.ReadLine();
                                 reResponse = reResponse.ToLower();
@@ -219,31 +228,73 @@ namespace Tales_from_Lodoro_1___The_Demon_Spider
                             }
                             if (response == "comply" || response == "agree")
                             {
+                                Thread.Sleep(200);
                                 Console.ForegroundColor = ConsoleColor.Blue;
                                 TextPrint("'Alright, I'm coming out now. You better keep your word.'");
-                                Console.ForegroundColor = ConsoleColor.Gray;
+                                Console.ResetColor();
                                 TextPrint("The dwarf places his axe back on his belt and steps back into the light.");
                                 Console.ForegroundColor = ConsoleColor.White;
                                 TextPrint("'Out ye come then. Nice and slow. We're just gonna talk, a'right?'");
-                                Console.ForegroundColor = ConsoleColor.Gray;
+                                Console.ResetColor();
                                 TextPrint("You step out into the doorway and face the dwarf.");
                                 Console.ForegroundColor = ConsoleColor.White;
                                 TextPrint("'I thought ye'd be taller. And, well, not a human.'");
                                 Console.ForegroundColor = ConsoleColor.Blue;
                                 TextPrint("'You shouldn't assume so much when you know so little.'");
+                                Thread.Sleep(400);
                                 TextPrint("'Like whether or not I have something.'");
-                                Console.ForegroundColor = ConsoleColor.Gray;
+                                Console.ResetColor();
                                 TextPrint("The dwarf drops his gaze to the floor, and starts shifting his feet.");
+                            }
+                            if (response == "rush" || response == "bull rush" || response == "bum rush")
+                            {
+                                Thread.Sleep(200);
+                                TextPrint("You launch yourself off of the wall at the dwarf.");
+                                TextPrint("He turns in time for your shoulder to meet his face. Quite forcefully, at that.");
+                                Thread.Sleep(350);
+                                TextPrint("Neither your shoulder nor his face enjoy it,");
+                                TextPrint("But you manage to knock him unconcious.");
+                                Thread.Sleep(250);
+                                Console.WriteLine();
+                                Thread.Sleep(250);
+                                TextPrint("You now have a choice: do you KILL him, TIE him up, or go and INFORM the authorities?");
+                                var choice = Console.ReadLine();
+                                choice = choice.ToLower();
+                                Console.Clear();
+
+                                if (choice == "kill")
+                                {
+                                    Thread.Sleep(200);
+                                    TextPrint("You slit his throat with ease, his blood dripping off your blade.");
+                                    TextPrint("As you watch, you realize that the blood is going to really be a damper");
+                                    TextPrint("on you ever being able to stay here again.");
+                                    Thread.Sleep(100);
+                                    Console.WriteLine();
+                                    Thread.Sleep(100);
+                                    TextPrint("You wrap a dark cloth around his throat to hide the blood and drag him to the window.");
+                                    TextPrint("You search him and find a letter, a handaxe, and two gold coins.");
+                                    inventory.Add("letter");
+                                    inventory.Add("handaxe");
+                                    Gold = Gold + 2;
+                                    Thread.Sleep(150);
+                                    Console.WriteLine();
+                                    Thread.Sleep(150);
+                                    TextPrint("After taking those things, you heave his body up and out the window.");
+                                    TextPrint("You watch his corpse thud into the garbage below.");
+                                    TextPrint("Do you read the letter?");
+                                    var read = Console.ReadLine();
+                                }
                             }
                         }
                         if (tactic == "surprise" || tactic == "scare" || tactic == "spook")
                         {
-                            TextPrint("You burst through the door with just enough force to knock it off its' hinges.");
+                            TextPrint("You burst through the door with just enough force to knock it off its' already loose hinges.");
                             TextPrint("The dwarf turns around so quickly that he slips on a sock and falls on his rear.");
                             Thread.Sleep(100);
                             Console.ForegroundColor = ConsoleColor.White;
                             TextPrint("'GAH!! What in Heldars' name-!? Wait, this isn' what i' looks like, I swear!'");
-                            Console.WriteLine(); Console.ForegroundColor = ConsoleColor.Gray;
+                            Console.WriteLine();
+                            Console.ResetColor();
                             Thread.Sleep(145);
                             TextPrint("Do you INTERROGATE the dwarf or KILL him?");
                             var decide = Console.ReadLine();
@@ -253,16 +304,19 @@ namespace Tales_from_Lodoro_1___The_Demon_Spider
                             if (decide == "interrogate" || decide == "question")
                             {
                                 TextPrint("You restrain him and tie his hands to the bedpost.");
-                                TextPrint("'What's all this fer, eh? I ain't taken nothin'!'");
+                                Console.ForegroundColor = ConsoleColor.White;
+                                TextPrint("'What's all this fer, eh? I didn't take nothin'!'");
+                                Console.ResetColor();
+                                TextPrint("He struggles against the bonds, but to no avail.");
                                 Console.WriteLine();
                                 Console.ForegroundColor = ConsoleColor.Blue;
                                 TextPrint("'That's enough. Tell me why you were digging through my things.'");
-                                Console.ForegroundColor = ConsoleColor.Gray;
+                                Console.ResetColor();
                                 TextPrint("The dwarf immediately averts his eyes and lowers his voice.");
                                 Console.WriteLine();
                                 Console.ForegroundColor = ConsoleColor.White;
                                 TextPrint("'Th-tha's none o' yer bloody business! I thought ye had somethin' o' mine, is all.");
-                                Console.ForegroundColor = ConsoleColor.Gray;
+                                Console.ResetColor();
                                 Console.WriteLine();
                                 TextPrint("Do you believe him?");                                
                                 TextPrint("If so, type YES. If not, type NO.");
@@ -274,12 +328,12 @@ namespace Tales_from_Lodoro_1___The_Demon_Spider
                                 {
                                     Console.ForegroundColor = ConsoleColor.Blue;
                                     TextPrint("'All right, dwarf. I believe you.'");
-                                    Console.ForegroundColor = ConsoleColor.Gray;
+                                    Console.ResetColor();
                                     Console.WriteLine();
                                     TextPrint("You untie him and pick him up off the floor.");
                                     Console.ForegroundColor = ConsoleColor.Blue;
                                     TextPrint("'Now get out of here before I change my mind.'");
-                                    Console.ForegroundColor = ConsoleColor.Gray;
+                                    Console.ResetColor();
                                     Console.Clear();
                                     TextPrint("He runs out the doorway as fast as he can.");
                                     TextPrint("You hear his footsteps thunder all they way until he has");
@@ -290,11 +344,11 @@ namespace Tales_from_Lodoro_1___The_Demon_Spider
                                 {
                                     Console.ForegroundColor = ConsoleColor.Blue;
                                     TextPrint("'Nice try, but wrong answer.'");
-                                    Console.ForegroundColor = ConsoleColor.Gray;
+                                    Console.ResetColor();
                                     TextPrint("The dwarf flinches, expecting some sort of pain.");
                                     Console.ForegroundColor = ConsoleColor.Blue;
                                     TextPrint("'What artifact do you think I have?'");
-                                    Console.ForegroundColor = ConsoleColor.Gray;
+                                    Console.ResetColor();
                                     TextPrint("He mumbles something under his breath, but you can't make anything out.");
                                     TextPrint("Do you PUSH him more or RELEASE him and move on?");
                                     var cop = Console.ReadLine();
@@ -305,7 +359,7 @@ namespace Tales_from_Lodoro_1___The_Demon_Spider
                             if (decide == "kill")
                             {
                                 TextPrint("The dwarf draws a handaxe and readies himself for combat.");
-                                Console.ForegroundColor = ConsoleColor.Red;
+                                Console.ForegroundColor = ConsoleColor.White;
                             }
                         }
                     }
@@ -320,7 +374,7 @@ namespace Tales_from_Lodoro_1___The_Demon_Spider
                         Console.ForegroundColor = ConsoleColor.DarkRed;
                         TextPrint("'Where do ye think yer goin?'");
                         Thread.Sleep(200);
-                        Console.ForegroundColor = ConsoleColor.Gray;
+                        Console.ResetColor();
                         TextPrint("The three men close in on you, and you have no escape route.");
                         TextPrint("The last thing you see is several vicious-looking knives speeding into your gut and face.");
                         Thread.Sleep(1000);
@@ -355,7 +409,7 @@ namespace Tales_from_Lodoro_1___The_Demon_Spider
                 Thread.Sleep(300);
                 Console.ForegroundColor = ConsoleColor.DarkMagenta;
                 TextPrint("'Oh, I'm sorry. I did not mean to disturb you. I'll be on my way then.'");
-                Console.ForegroundColor = ConsoleColor.Gray;
+                Console.ResetColor();
                 TextPrint("He leaves the inn and you eventually forget he ever spoke to you.");
                 Thread.Sleep(370);
                 TextPrint("You have avoided the issue and the world is doomed!");
